@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Race Results, triathlon timing by Dr. Saqer AlKhalifa</title>
+<meta name="description" content="Triathlon race results by Dr. Saqer AlKhalifa: final swim, bike, run and transition times for every finisher, ranked overall and by sex and age group, in English and Arabic.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="fonts.css">
+<link rel="canonical" href="https://races.saqeralkhalifa.com/">
+<link rel="icon" type="image/png" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dr. Saqer AlKhalifa">
+<meta property="og:title" content="Race Results, triathlon timing">
+<meta property="og:description" content="Triathlon race results by Dr. Saqer AlKhalifa: final swim, bike, run and transition times for every finisher, ranked overall and by sex and age group, in English and Arabic.">
+<meta property="og:url" content="https://races.saqeralkhalifa.com/">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ar_BH">
+<script>window.goatcounter = {path: function(p){ return "/races" + p; }};</script>
+<script data-goatcounter="https://majorcompass.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<link rel="alternate" hreflang="en" href="https://races.saqeralkhalifa.com/?lang=en">
+<link rel="alternate" hreflang="ar" href="https://races.saqeralkhalifa.com/?lang=ar">
+<link rel="alternate" hreflang="x-default" href="https://races.saqeralkhalifa.com/">
+<script>
+/* MCLANG: one language resolver shared across Dr. Saqer AlKhalifa's tools. */
+function mcInitLang(){
+  try{
+    var q = (location.search.match(/[?&]lang=(ar|en)\b/) || [])[1];
+    if(q) return q;
+    var s = window.localStorage && localStorage.getItem("mc-lang");
+    if(s === "ar" || s === "en") return s;
+    var n = (navigator.languages && navigator.languages[0]) || navigator.language || "";
+    if(/^ar/i.test(n)) return "ar";
+  }catch(e){}
+  return "en";
+}
+function mcSaveLang(v){ try{ localStorage.setItem("mc-lang", v); }catch(e){} }
+</script>
+<style>
+/* ================= RACE RESULTS, THEME 2a MAJLIS =================
+   Same look as saqeralkhalifa.com and the tool sites: cream paper,
+   one deep blue band, gold for emphasis, EB Garamond throughout,
+   IBM Plex Mono for labels and times, Noto Naskh Arabic for Arabic.
+   Radius 2px. No shadows, no gradients. */
+:root{
+  --font-display:'EB Garamond', Georgia, 'Times New Roman', serif;
+  --font-body:'EB Garamond', Georgia, 'Times New Roman', serif;
+  --font-ar:'Noto Naskh Arabic', 'EB Garamond', Georgia, serif;
+  --font-label:'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --paper:#FAF5EA; --paper-2:#EFE4CE; --card:#FFFBF2;
+  --line:#E2D5BB; --line-2:#D3C0A0;
+  --ink:#4A3728; --ink-2:#6B5B47; --ink-3:#6F5D4A;
+  --band:#152A55; --band-line:#2E4477; --royal:#1E3A78;
+  --on-band:#F3EADA;
+  --gold:#C09A45; --gold-dark:#7D5F27;
+  --accent:#1E3A78;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth; -webkit-text-size-adjust:100%;}
+body{background:var(--paper); color:var(--ink); font-family:var(--font-body); font-size:19px;
+  line-height:1.7; min-height:100vh; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;}
+[dir="rtl"] body{font-family:var(--font-ar); line-height:1.9;}
+.wrap{max-width:1000px; margin:0 auto; padding:0 22px 80px;}
+.wrap, .wrap *{border-radius:2px;}
+h1, h2, h3{font-family:var(--font-display); font-weight:400; letter-spacing:0; color:var(--band);}
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3{font-family:var(--font-ar); font-weight:600;}
+a{color:var(--accent);}
+::selection{background:var(--paper-2); color:var(--band);}
+:focus-visible{outline:2px solid var(--gold-dark); outline-offset:2px;}
+.vh{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
+
+/* ---- labels: IBM Plex Mono, uppercase ---- */
+.kicker, .lbl, th, .tag, .count, .rdate, .ranks{font-family:var(--font-label);}
+[dir="rtl"] .kicker, [dir="rtl"] .lbl, [dir="rtl"] th, [dir="rtl"] .tag, [dir="rtl"] .count,
+[dir="rtl"] .rdate, [dir="rtl"] .ranks{font-family:var(--font-ar);}
+
+/* ---- hero ---- */
+.hero{text-align:start; padding:60px 0 30px; border-bottom:1px solid var(--line);}
+.kicker{font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--gold-dark); font-weight:500;}
+[dir="rtl"] .kicker{letter-spacing:0; font-size:15px;}
+.hero h1{font-size:72px; line-height:1.04; margin-top:18px;}
+[dir="rtl"] .hero h1{font-size:58px; line-height:1.3;}
+.hero p.sub{font-size:22px; line-height:1.6; color:var(--ink-2); max-width:640px; margin:22px 0 0;}
+
+/* ---- the race heading ---- */
+.race{margin-top:36px; display:flex; align-items:baseline; justify-content:space-between; gap:14px 24px; flex-wrap:wrap;}
+.race h2{font-size:31px; line-height:1.3;}
+[dir="rtl"] .race h2{font-size:28px;}
+.rmeta{display:flex; align-items:center; gap:12px; flex-wrap:wrap;}
+.rdate{font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3);}
+[dir="rtl"] .rdate{letter-spacing:0; text-transform:none; font-size:15px;}
+.tag{display:inline-block; font-size:11px; letter-spacing:.14em; text-transform:uppercase; font-weight:500;
+  padding:4px 9px; border:1px solid var(--line-2); color:var(--ink-3); white-space:nowrap; line-height:1.5;}
+[dir="rtl"] .tag{letter-spacing:0; text-transform:none; font-size:13px;}
+.tag.final{background:var(--band); border-color:var(--band); color:var(--on-band);}
+.tag.provisional{border-color:var(--gold-dark); color:var(--gold-dark);}
+
+/* ---- selectors ---- */
+.ctrl{margin-top:26px; padding-top:8px; border-top:2px solid var(--band);}
+.fgroup{margin-top:18px;}
+.lbl{display:block; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--gold-dark);
+  font-weight:500; margin-bottom:11px;}
+[dir="rtl"] .lbl{letter-spacing:0; text-transform:none; font-size:15px;}
+.chips{display:flex; flex-wrap:wrap; gap:8px;}
+.chip{min-height:44px; min-width:44px; padding:0 16px; border:1px solid var(--line-2); background:transparent;
+  color:var(--ink); font-family:var(--font-body); font-size:17px; line-height:1.2; cursor:pointer;
+  font-variant-numeric:tabular-nums; transition:background .15s, color .15s, border-color .15s;}
+[dir="rtl"] .chip{font-family:var(--font-ar);}
+.chip:hover{border-color:var(--band); color:var(--band);}
+.chip[aria-pressed="true"]{background:var(--band); border-color:var(--band); color:var(--on-band);}
+.chip .l, .chip .n{unicode-bidi:isolate;}
+.chip .n{font-family:var(--font-label); font-size:12px; color:var(--ink-3); margin-inline-start:7px;}
+[dir="rtl"] .chip .n{font-family:var(--font-ar); font-size:13px;}
+.chip[aria-pressed="true"] .n{color:var(--on-band);}
+.find{width:100%; max-width:420px; height:48px; padding:0 14px; border:1px solid var(--line-2); background:var(--card);
+  color:var(--ink); font-family:var(--font-body); font-size:19px;}
+[dir="rtl"] .find{font-family:var(--font-ar);}
+.find::placeholder{color:var(--ink-3); opacity:1;}
+.count{margin-top:22px; padding-top:16px; border-top:1px solid var(--line); font-size:13px; letter-spacing:.04em; color:var(--ink-3);}
+[dir="rtl"] .count{letter-spacing:0; font-size:15px;}
+
+/* ---- the ledger ---- */
+.ledger{margin-top:14px; border-top:2px solid var(--band);}
+table{width:100%; border-collapse:collapse;}
+th{text-align:start; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-dark);
+  font-weight:500; padding:13px 10px; border-bottom:1px solid var(--line-2); white-space:nowrap;}
+[dir="rtl"] th{letter-spacing:0; text-transform:none; font-size:14px;}
+th.t, td.t{text-align:end;}
+td{padding:14px 10px; border-bottom:1px solid var(--line); vertical-align:top; font-size:19px; line-height:1.45; color:var(--ink);}
+tbody tr{background:var(--card);}
+td.pos{font-family:var(--font-display); font-size:26px; line-height:1.15; color:var(--band); width:64px; white-space:nowrap;
+  border-inline-start:4px solid transparent;}
+[dir="rtl"] td.pos{font-family:var(--font-ar); font-weight:600; font-size:23px;}
+tr.podium td.pos{border-inline-start-color:var(--gold);}
+td.who b{display:block; font-weight:500; font-size:20px; color:var(--band); line-height:1.35;}
+[dir="rtl"] td.who b{font-weight:600; font-size:19px; line-height:1.6;}
+.ranks{display:block; margin-top:4px; font-size:12px; letter-spacing:.04em; color:var(--ink-3); line-height:1.6;}
+[dir="rtl"] .ranks{letter-spacing:0; font-size:14px;}
+td.cat{white-space:nowrap; font-size:17px; color:var(--ink-2);}
+td.t{font-family:var(--font-label); font-size:15px; line-height:1.9; white-space:nowrap; color:var(--ink-2);
+  font-variant-numeric:tabular-nums;}
+[dir="rtl"] td.t{font-family:var(--font-ar); font-size:17px; line-height:1.65;}
+td.t.total{color:var(--band); font-weight:500;}
+[dir="rtl"] td.t.total{font-weight:600;}
+tr.out td{color:var(--ink-3);}
+tr.out td.who b{color:var(--ink-2);}
+.t bdi{unicode-bidi:isolate; direction:ltr;}
+
+/* ---- callouts ---- */
+.keybox{background:var(--card); border:1px solid var(--line); border-inline-start:4px solid var(--gold); padding:30px 34px; margin:14px 0 0;}
+.keybox h2{font-size:31px; line-height:1.3;}
+[dir="rtl"] .keybox h2{font-size:28px;}
+.keybox p{font-size:19px; line-height:1.75; color:var(--ink); margin-top:12px;}
+.empty{padding:26px 30px; background:var(--card); border:1px solid var(--line); border-top:0; font-size:19px; color:var(--ink-2);}
+
+.how{margin-top:46px; padding-top:34px; border-top:2px solid var(--band);}
+.how h2{font-size:31px; line-height:1.3;}
+[dir="rtl"] .how h2{font-size:28px;}
+.steps{display:grid; grid-template-columns:1fr 1fr 1fr; gap:26px; margin-top:20px;}
+.step b{display:block; font-family:var(--font-display); font-weight:400; font-size:34px; line-height:1; color:var(--gold-dark); margin-bottom:10px;}
+[dir="rtl"] .step b{font-family:var(--font-ar); font-weight:600; font-size:30px; line-height:1.3;}
+.step p{font-size:19px; line-height:1.7; color:var(--ink);}
+[dir="rtl"] .step p{line-height:1.9;}
+.step a{color:var(--accent); word-break:break-word;}
+.note{margin-top:26px; background:var(--paper-2); border-inline-start:4px solid var(--gold); padding:22px 26px;}
+.note p{font-size:19px; line-height:1.7; color:var(--ink);}
+[dir="rtl"] .note p{line-height:1.9;}
+.note p + p{margin-top:10px;}
+
+.method{margin-top:40px; padding:26px 30px; background:var(--card); border:1px solid var(--line);}
+.method h2{font-size:25px; line-height:1.3;}
+[dir="rtl"] .method h2{font-size:23px;}
+.method p{font-size:19px; line-height:1.7; color:var(--ink-2); margin-top:10px;}
+[dir="rtl"] .method p{line-height:1.9;}
+
+footer.site{margin-top:44px; padding-top:20px; border-top:1px solid var(--line); font-size:17px; color:var(--ink-3); text-align:center;}
+footer.site a{color:var(--accent);}
+
+/* ---- narrow screens: each finisher becomes a card ---- */
+@media (max-width:900px){
+  .ledger table, .ledger tbody, .ledger tr, .ledger td{display:block; width:100%;}
+  .ledger thead{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);}
+  .ledger tr{display:grid; grid-template-columns:repeat(3, 1fr); column-gap:14px; row-gap:0;
+    padding:18px 20px 16px; border:1px solid var(--line); border-top:0; border-inline-start:4px solid transparent;}
+  .ledger tr.podium{border-inline-start-color:var(--gold);}
+  .ledger td{border:0; padding:0; width:auto;}
+  .ledger td.pos{grid-column:1 / -1; border:0; width:auto; font-size:31px;}
+  [dir="rtl"] .ledger td.pos{font-size:28px;}
+  .ledger td.who{grid-column:1 / -1; margin-top:2px;}
+  .ledger td.cat{grid-column:1 / -1; margin-top:4px; padding-bottom:14px; border-bottom:1px solid var(--line);}
+  .ledger td.t{text-align:start; padding-top:12px; font-size:17px;}
+  .ledger td.t::before{content:attr(data-l); display:block; font-family:var(--font-label); font-size:11px;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-dark); font-weight:500; line-height:1.5;}
+  [dir="rtl"] .ledger td.t::before{font-family:var(--font-ar); letter-spacing:0; text-transform:none; font-size:14px;}
+  .steps{grid-template-columns:1fr; gap:22px;}
+}
+@media (max-width:760px){
+  body{font-size:18px;}
+  .hero{padding:40px 0 24px;}
+  .hero h1{font-size:44px; line-height:1.1;}
+  [dir="rtl"] .hero h1{font-size:38px; line-height:1.3;}
+  .hero p.sub{font-size:19px;}
+  .race h2{font-size:25px;}
+  .keybox{padding:24px 22px;}
+  .keybox h2, .how h2{font-size:25px;}
+  .method{padding:22px 20px;}
+  .empty{padding:22px 20px;}
+  .note{padding:20px 20px;}
+}
+@media print{
+  .wpbar, .ctrl .fgroup, .how, footer.site{display:none;}
+}
+</style>
+<style id="wpbar-css">
+/* WPBAR: the exact site header from saqeralkhalifa.com, replicated for the tool sites. */
+.wpbar{background:#152A55;font-family:'EB Garamond',Georgia,'Times New Roman',serif;}
+.wpbar-in{margin-left:40px;margin-right:40px;padding-top:14px;padding-bottom:14px;padding-left:min(104px,8vw);padding-right:min(104px,8vw);}
+.wpbar-row{width:100%;max-width:1280px;margin-left:auto;margin-right:auto;display:flex;align-items:flex-start;justify-content:space-between;gap:24px;direction:ltr;}
+.wpright{display:flex;align-items:flex-start;gap:20px;}
+html[lang="ar"] .wpright{direction:rtl;}
+.wpbrand{font-size:20px;line-height:33px;margin-top:-1px;margin-bottom:1px;font-weight:500;color:#F3EADA;text-decoration:none;letter-spacing:.2px;white-space:nowrap;border:0;}
+.wpnav{display:flex;align-items:flex-start;gap:20px;flex-wrap:nowrap;margin-top:4px;line-height:19px;}
+.wpdd{line-height:19px;}
+.wpnav-ar{direction:rtl;font-family:'Noto Naskh Arabic','Amiri',Georgia,serif;}
+html[lang="ar"] .wpnav-en{display:none;}
+html:not([lang="ar"]) .wpnav-ar{display:none;}
+.wpitem{display:flex;align-items:center;font-size:15px;font-weight:500;color:#F3EADA;text-decoration:none;white-space:nowrap;border:0;line-height:19px;}
+.wpnav-ar .wpitem{font-size:15px;font-family:'Noto Naskh Arabic','Amiri',Georgia,serif;}
+.wpitem:hover{color:#C09A45;}
+.wplang{background:none;border:0;cursor:pointer;padding:0;margin-top:4px;font-family:'EB Garamond',Georgia,'Times New Roman',serif !important;line-height:19px;}
+.wpcaret{width:10.8px;height:10.8px;margin:0 0 0 4.5px;position:relative;top:3px;flex:none;}
+.wpcaret path{stroke:#F3EADA;}
+.wpitem:hover .wpcaret path{stroke:#C09A45;}
+.wpnav-ar .wpcaret{margin:0 4.5px 0 0;}
+.wpdd{position:relative;}
+.wpmenu{display:none;position:absolute;top:100%;left:-14px;padding-top:10px;min-width:250px;z-index:300;}
+.wpnav-ar .wpmenu{left:auto;right:-14px;text-align:right;}
+.wpdd:hover .wpmenu,.wpdd:focus-within .wpmenu{display:block;}
+.wpmenu > a{display:block;background:#152A55;border:1px solid rgba(0,0,0,.15);border-top:0;padding:9px 16px;font-size:18px;line-height:1.65;color:#F3EADA;text-decoration:none;white-space:nowrap;font-weight:500;}
+.wpmenu > a:first-child{border-top:1px solid #2E4477;border-radius:2px 2px 0 0;}
+.wpmenu > a:last-child{border-radius:0 0 2px 2px;}
+.wpmenu > a:hover{color:#C09A45;}
+.wpburger{display:none;background:none;border:0;padding:0;color:#F3EADA;font-size:20px;line-height:24px;cursor:pointer;}
+.wpburger:hover{color:#C09A45;}
+.wpmob{display:none;}
+.wpmob-nav a{display:block;color:#F3EADA;text-decoration:none;font-weight:500;font-family:'EB Garamond',Georgia,serif;}
+.wpmob-nav a.wpmob-top{font-size:19px;padding:12px 20px 12px 20px;border-top:1px solid #2E4477;margin-top:10px;}
+.wpmob-nav a.wpmob-top:first-child{border-top:0;margin-top:0;}
+.wpmob-nav a.wpmob-sub{font-size:16px;padding:7px 20px 7px 38px;color:#CBD5EA;}
+.wpmob-nav a:hover{color:#C09A45;}
+.wpmob-ar{direction:rtl;text-align:right;}
+.wpmob-ar a{font-family:'Noto Naskh Arabic','Amiri',Georgia,serif;}
+.wpmob-ar a.wpmob-sub{padding:8px 38px 8px 20px;}
+html[lang="ar"] .wpmob-en{display:none;}
+html:not([lang="ar"]) .wpmob-ar{display:none;}
+@media (max-width:1149px){
+.wpbar-in{margin-left:0;margin-right:0;padding:9px 18px;}
+.wpbar-row{max-width:none;align-items:center;gap:14px;}
+.wpright{align-items:center;gap:14px;}
+.wpnav{display:none !important;}
+.wpbrand{margin-right:auto;}
+html[lang="ar"] .wpbrand{margin-right:0;margin-left:auto;}
+.wplang{margin-top:0;}
+.wpburger{display:block;}
+.wpbar.open .wpmob{display:block;background:#152A55;border-top:1px solid #2E4477;max-height:calc(100vh - 51px);overflow-y:auto;}
+}
+
+</style>
+</head>
+<body>
+<div class="wpbar" id="wpbar"><div class="wpbar-in"><div class="wpbar-row"><a class="wpbrand" href="https://saqeralkhalifa.com/">Dr. Saqer AlKhalifa</a><div class="wpright"><nav class="wpnav wpnav-en"><div class="wpdd"><a class="wpitem" href="https://saqeralkhalifa.com/mentorship/">Work with me<svg class="wpcaret" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5"></path></svg></a><div class="wpmenu"><a href="https://saqeralkhalifa.com/mentorship/">Mentorship</a><a href="https://saqeralkhalifa.com/speaking/">Speaking &amp; Media</a><a href="https://saqeralkhalifa.com/contact-me/">Contact</a></div></div><div class="wpdd"><a class="wpitem" href="https://saqeralkhalifa.com/major-compass/">For Students<svg class="wpcaret" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5"></path></svg></a><div class="wpmenu"><a href="https://saqeralkhalifa.github.io/major-compass/">Major Compass Quiz</a><a href="https://saqeralkhalifa.github.io/major-compass/explore.html">Every Major Explained</a><a href="https://saqeralkhalifa.github.io/major-compass/entry.html">Entry Requirements</a><a href="https://saqeralkhalifa.github.io/major-compass/scholarships.html">Scholarships and Funding</a><a href="https://saqeralkhalifa.github.io/major-compass/parents.html">Parent Guide</a><a href="https://saqeralkhalifa.github.io/major-compass/ai.html">AI and Your Major</a><a href="https://saqeralkhalifa.github.io/major-compass/routes.html">What a Dealbreaker Closes</a><a href="https://saqeralkhalifa.github.io/major-compass/alternatives.html">Routes Without a Degree</a><a href="https://internships.saqeralkhalifa.com/?lang=en">Internships</a><a href="https://internships.saqeralkhalifa.com/cv.html?lang=en">Build a CV</a></div></div><div class="wpdd"><a class="wpitem" href="https://gigs.saqeralkhalifa.com/?lang=en">For Job Seekers<svg class="wpcaret" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5"></path></svg></a><div class="wpmenu"><a href="https://gigs.saqeralkhalifa.com/?lang=en">Gigs Board</a><a href="https://gigs.saqeralkhalifa.com/?lang=en#jobs">Full-time Jobs</a><a href="https://internships.saqeralkhalifa.com/?lang=en">Internships</a><a href="https://internships.saqeralkhalifa.com/cv.html?lang=en">Build a CV</a><a href="https://saqeralkhalifa.com/post-a-gig/">Post a Gig</a><a href="https://saqeralkhalifa.com/find-work/">Find Work</a><a href="https://saqeralkhalifa.com/find-investors/">Find Investors</a></div></div><div class="wpdd"><a class="wpitem" href="https://saqeralkhalifa.com/#book">Shackles of Democracy<svg class="wpcaret" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5"></path></svg></a><div class="wpmenu"><a href="https://saqeralkhalifa.com/#book">The Book</a><a href="https://saqeralkhalifa.com/first-chapter/">First Chapter Free</a><a href="https://saqeralkhalifa.com/#formats">Choose Your Format</a><a href="https://saqeralkhalifa.com/#stores">Where to Buy</a><a href="https://saqeralkhalifa.com/check/">The Data</a><a href="https://saqeralkhalifa.com/arabic/">Arabic Edition</a></div></div><div class="wpdd"><a class="wpitem" href="https://saqeralkhalifa.com/the-trust-trap/">The Trust Trap<svg class="wpcaret" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5"></path></svg></a><div class="wpmenu"><a href="https://saqeralkhalifa.com/the-trust-trap/">About the Book</a><a href="https://saqeralkhalifa.com/the-trust-trap/#chapters">Inside the Book</a><a href="https://saqeralkhalifa.com/the-trust-trap/#resources">Free Resources</a><a href="https://saqeralkhalifa.com/the-trust-trap/#faq">Questions</a><a href="https://saqeralkhalifa.com/the-trust-trap/#buy">Where to Buy</a></div></div><a class="wpitem" href="https://saqeralkhalifa.com/about/">About</a><div class="wpdd"><a class="wpitem" href="https://saqeralkhalifa.com/blog/">Blog<svg class="wpcaret" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5"></path></svg></a><div class="wpmenu"><a href="https://saqeralkhalifa.com/blog/">All Articles</a><a href="https://saqeralkhalifa.com/category/trust-by-design/">Trust by Design</a><a href="https://saqeralkhalifa.com/category/reform-theater/">Reform Theater</a><a href="https://saqeralkhalifa.com/category/country-cases/">Country Cases</a><a href="https://saqeralkhalifa.com/category/institutional-memory/">Institutional Memory</a><a href="https://saqeralkhalifa.com/category/politics/">Politics</a><a href="https://saqeralkhalifa.com/category/economics/">Economics</a><a href="https://saqeralkhalifa.com/category/social/">Social</a><a href="https://saqeralkhalifa.com/category/published-and-mentions/">Published & Mentions</a><a href="https://saqeralkhalifa.com/category/interesting/">Interesting</a></div></div></nav><nav class="wpnav wpnav-ar"><div class="wpdd"><a class="wpitem" href="https://saqeralkhalifa.com/mentorship-ar/">العمل معي<svg class="wpcaret" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5"></path></svg></a><div class="wpmenu"><a href="https://saqeralkhalifa.com/mentorship-ar/">الإرشاد والتوجيه</a><a href="https://saqeralkhalifa.com/contact-ar/">تواصل</a></div></div><div class="wpdd"><a class="wpitem" href="https://saqeralkhalifa.com/major-compass/#ar">للطلبة<svg class="wpcaret" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5"></path></svg></a><div class="wpmenu"><a href="https://saqeralkhalifa.github.io/major-compass/?lang=ar">بوصلة التخصص</a><a href="https://saqeralkhalifa.github.io/major-compass/explore.html?lang=ar">استكشف التخصصات</a><a href="https://saqeralkhalifa.github.io/major-compass/entry.html?lang=ar">شروط القبول</a><a href="https://saqeralkhalifa.github.io/major-compass/scholarships.html?lang=ar">المنح والتمويل</a><a href="https://saqeralkhalifa.github.io/major-compass/parents.html?lang=ar">دليل أولياء الأمور</a><a href="https://saqeralkhalifa.github.io/major-compass/ai.html?lang=ar">الذكاء الاصطناعي وتخصصك</a><a href="https://saqeralkhalifa.github.io/major-compass/routes.html?lang=ar">ماذا يغلق كل شرط</a><a href="https://saqeralkhalifa.github.io/major-compass/alternatives.html?lang=ar">مسارات بدون شهادة</a><a href="https://internships.saqeralkhalifa.com/?lang=ar">فرص التدريب</a><a href="https://internships.saqeralkhalifa.com/cv.html?lang=ar">السيرة الذاتية</a></div></div><div class="wpdd"><a class="wpitem" href="https://gigs.saqeralkhalifa.com/?lang=ar">للباحثين عن عمل<svg class="wpcaret" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5"></path></svg></a><div class="wpmenu"><a href="https://gigs.saqeralkhalifa.com/?lang=ar">لوحة الأعمال القصيرة</a><a href="https://gigs.saqeralkhalifa.com/?lang=ar#jobs">الوظائف الدائمة</a><a href="https://internships.saqeralkhalifa.com/?lang=ar">فرص التدريب</a><a href="https://internships.saqeralkhalifa.com/cv.html?lang=ar">السيرة الذاتية</a><a href="https://saqeralkhalifa.com/post-a-gig/">انشر فرصة</a><a href="https://saqeralkhalifa.com/find-work/">سجّل بياناتك</a><a href="https://saqeralkhalifa.com/find-investors-ar/">أفكار تبحث عن مستثمر</a></div></div><div class="wpdd"><a class="wpitem" href="https://saqeralkhalifa.com/arabic/#book">أغلال الديمقراطية<svg class="wpcaret" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5"></path></svg></a><div class="wpmenu"><a href="https://saqeralkhalifa.com/arabic/#book">الكتاب</a><a href="https://saqeralkhalifa.com/readers/">الفصل الأول مجانا</a><a href="https://saqeralkhalifa.com/arabic/#buy">الشراء</a><a href="https://saqeralkhalifa.com/check-ar/">البيانات</a></div></div><a class="wpitem" href="https://saqeralkhalifa.com/the-trust-trap-ar/">مصيدة الثقة</a><a class="wpitem" href="https://saqeralkhalifa.com/about-ar/">نبذة</a><a class="wpitem" href="https://saqeralkhalifa.com/blog/">المدونة</a></nav><button class="wpitem wplang" id="langToggle" type="button">العربية</button><button class="wpburger" id="wpburger" type="button" aria-label="Open menu">☰</button></div></div></div><div class="wpmob"><div class="wpmob-nav wpmob-en"><a class="wpmob-top" href="https://saqeralkhalifa.com/mentorship/">Work with me</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/mentorship/">Mentorship</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/speaking/">Speaking &amp; Media</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/contact-me/">Contact</a><a class="wpmob-top" href="https://saqeralkhalifa.com/major-compass/">For Students</a><a class="wpmob-sub" href="https://saqeralkhalifa.github.io/major-compass/">Major Compass Quiz</a><a class="wpmob-sub" href="https://saqeralkhalifa.github.io/major-compass/explore.html">Every Major Explained</a><a class="wpmob-sub" href="https://saqeralkhalifa.github.io/major-compass/entry.html">Entry Requirements</a><a class="wpmob-sub" href="https://saqeralkhalifa.github.io/major-compass/scholarships.html">Scholarships and Funding</a><a class="wpmob-sub" href="https://saqeralkhalifa.github.io/major-compass/parents.html">Parent Guide</a><a class="wpmob-sub" href="https://saqeralkhalifa.github.io/major-compass/ai.html">AI and Your Major</a><a class="wpmob-sub" href="https://saqeralkhalifa.github.io/major-compass/routes.html">What a Dealbreaker Closes</a><a class="wpmob-sub" href="https://saqeralkhalifa.github.io/major-compass/alternatives.html">Routes Without a Degree</a><a class="wpmob-sub" href="https://internships.saqeralkhalifa.com/?lang=en">Internships</a><a class="wpmob-sub" href="https://internships.saqeralkhalifa.com/cv.html?lang=en">Build a CV</a><a class="wpmob-top" href="https://gigs.saqeralkhalifa.com/?lang=en">For Job Seekers</a><a class="wpmob-sub" href="https://gigs.saqeralkhalifa.com/?lang=en">Gigs Board</a><a class="wpmob-sub" href="https://gigs.saqeralkhalifa.com/?lang=en#jobs">Full-time Jobs</a><a class="wpmob-sub" href="https://internships.saqeralkhalifa.com/?lang=en">Internships</a><a class="wpmob-sub" href="https://internships.saqeralkhalifa.com/cv.html?lang=en">Build a CV</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/post-a-gig/">Post a Gig</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/find-work/">Find Work</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/find-investors/">Find Investors</a><a class="wpmob-top" href="https://saqeralkhalifa.com/#book">Shackles of Democracy</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/#book">The Book</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/first-chapter/">First Chapter Free</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/#formats">Choose Your Format</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/#stores">Where to Buy</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/check/">The Data</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/arabic/">Arabic Edition</a><a class="wpmob-top" href="https://saqeralkhalifa.com/the-trust-trap/">The Trust Trap</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/the-trust-trap/">About the Book</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/the-trust-trap/#chapters">Inside the Book</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/the-trust-trap/#resources">Free Resources</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/the-trust-trap/#faq">Questions</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/the-trust-trap/#buy">Where to Buy</a><a class="wpmob-top" href="https://saqeralkhalifa.com/about/">About</a><a class="wpmob-top" href="https://saqeralkhalifa.com/blog/">Blog</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/blog/">All Articles</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/category/trust-by-design/">Trust by Design</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/category/reform-theater/">Reform Theater</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/category/country-cases/">Country Cases</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/category/institutional-memory/">Institutional Memory</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/category/politics/">Politics</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/category/economics/">Economics</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/category/social/">Social</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/category/published-and-mentions/">Published & Mentions</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/category/interesting/">Interesting</a></div><div class="wpmob-nav wpmob-ar"><a class="wpmob-top" href="https://saqeralkhalifa.com/mentorship-ar/">العمل معي</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/mentorship-ar/">الإرشاد والتوجيه</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/contact-ar/">تواصل</a><a class="wpmob-top" href="https://saqeralkhalifa.com/major-compass/#ar">للطلبة</a><a class="wpmob-sub" href="https://saqeralkhalifa.github.io/major-compass/?lang=ar">بوصلة التخصص</a><a class="wpmob-sub" href="https://saqeralkhalifa.github.io/major-compass/explore.html?lang=ar">استكشف التخصصات</a><a class="wpmob-sub" href="https://saqeralkhalifa.github.io/major-compass/entry.html?lang=ar">شروط القبول</a><a class="wpmob-sub" href="https://saqeralkhalifa.github.io/major-compass/scholarships.html?lang=ar">المنح والتمويل</a><a class="wpmob-sub" href="https://saqeralkhalifa.github.io/major-compass/parents.html?lang=ar">دليل أولياء الأمور</a><a class="wpmob-sub" href="https://saqeralkhalifa.github.io/major-compass/ai.html?lang=ar">الذكاء الاصطناعي وتخصصك</a><a class="wpmob-sub" href="https://saqeralkhalifa.github.io/major-compass/routes.html?lang=ar">ماذا يغلق كل شرط</a><a class="wpmob-sub" href="https://saqeralkhalifa.github.io/major-compass/alternatives.html?lang=ar">مسارات بدون شهادة</a><a class="wpmob-sub" href="https://internships.saqeralkhalifa.com/?lang=ar">فرص التدريب</a><a class="wpmob-sub" href="https://internships.saqeralkhalifa.com/cv.html?lang=ar">السيرة الذاتية</a><a class="wpmob-top" href="https://gigs.saqeralkhalifa.com/?lang=ar">للباحثين عن عمل</a><a class="wpmob-sub" href="https://gigs.saqeralkhalifa.com/?lang=ar">لوحة الأعمال القصيرة</a><a class="wpmob-sub" href="https://gigs.saqeralkhalifa.com/?lang=ar#jobs">الوظائف الدائمة</a><a class="wpmob-sub" href="https://internships.saqeralkhalifa.com/?lang=ar">فرص التدريب</a><a class="wpmob-sub" href="https://internships.saqeralkhalifa.com/cv.html?lang=ar">السيرة الذاتية</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/post-a-gig/">انشر فرصة</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/find-work/">سجّل بياناتك</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/find-investors-ar/">أفكار تبحث عن مستثمر</a><a class="wpmob-top" href="https://saqeralkhalifa.com/arabic/#book">أغلال الديمقراطية</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/arabic/#book">الكتاب</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/readers/">الفصل الأول مجانا</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/arabic/#buy">الشراء</a><a class="wpmob-sub" href="https://saqeralkhalifa.com/check-ar/">البيانات</a><a class="wpmob-top" href="https://saqeralkhalifa.com/the-trust-trap-ar/">مصيدة الثقة</a><a class="wpmob-top" href="https://saqeralkhalifa.com/about-ar/">نبذة</a><a class="wpmob-top" href="https://saqeralkhalifa.com/blog/">المدونة</a></div></div><script>(function(){var b=document.getElementById("wpburger"),w=document.getElementById("wpbar");if(b&&w){b.addEventListener("click",function(){var o=w.classList.toggle("open");b.textContent=o?"✕":"☰";b.setAttribute("aria-label",o?"Close menu":"Open menu");});}var t=document.getElementById("langToggle");if(!t)return;function fix(){var ar=document.documentElement.lang==="ar";var want=ar?"English":"العربية";if(t.textContent.trim()!==want){t.textContent=want;}}fix();new MutationObserver(fix).observe(document.documentElement,{attributes:true,attributeFilter:["lang"]});new MutationObserver(fix).observe(t,{childList:true,characterData:true,subtree:true});})();</script></div>
+<div class="wrap">
+
+<div class="hero">
+  <div class="kicker" id="t-kicker"></div>
+  <h1 id="t-title"></h1>
+  <p class="sub" id="t-sub"></p>
+</div>
+
+<div class="race">
+  <h2 id="r-name"></h2>
+  <div class="rmeta"><span class="rdate" id="r-date"></span><span class="tag" id="r-status"></span></div>
+</div>
+
+<div class="ctrl" id="results">
+  <div class="fgroup" id="g-race" hidden><span class="lbl" id="l-race"></span><div class="chips" id="racechips"></div></div>
+  <div class="fgroup" role="group" aria-labelledby="l-sex"><span class="lbl" id="l-sex"></span><div class="chips" id="sexchips"></div></div>
+  <div class="fgroup" role="group" aria-labelledby="l-ag"><span class="lbl" id="l-ag"></span><div class="chips" id="agchips"></div></div>
+  <div class="fgroup"><label class="lbl" id="l-find" for="find"></label><input class="find" id="find" type="search" autocomplete="off"></div>
+  <div class="count" id="count" aria-live="polite" hidden></div>
+</div>
+
+<div class="keybox" id="pending" hidden>
+  <h2 id="p-h"></h2>
+  <p id="p-p"></p>
+</div>
+<div class="ledger" id="ledger" hidden><table id="rtable"></table></div>
+<div class="empty" id="empty" hidden></div>
+
+<div class="how" id="send">
+  <h2 id="how-h"></h2>
+  <div class="steps">
+    <div class="step"><b>1</b><p id="h-1"></p></div>
+    <div class="step"><b>2</b><p id="h-2"></p></div>
+    <div class="step"><b>3</b><p id="h-3"></p></div>
+  </div>
+  <div class="note"><p id="n-1"></p><p id="n-2"></p></div>
+</div>
+
+<div class="method">
+  <h2 id="m-h"></h2>
+  <p id="m-p"></p>
+</div>
+
+<footer class="site"><p id="t-foot"></p></footer>
+</div>
+<script src="results.js"></script>
+<script>
+/* Race results. The data lives in results.js as window.RACES. This script ranks
+   the finishers by total time and draws the list for the chosen sex and age group.
+   Nothing but times is ever read from the data: no heart rate, cadence or power. */
+var AGES = ["18-24","25-29","30-34","35-39","40-44","45-49","50-54","55-59","60-64","65-69","70-74","75-79"];
+var LEGS = ["swim","t1","bike","t2","run"];
+var RACES = (window.RACES || []);
+var LANG = "en", RACE = RACES.length ? RACES[RACES.length - 1].id : null, SEX = "all", AG = "all", FIND = "";
+
+var T = {
+en:{
+  doc:"Race Results, triathlon timing by Dr. Saqer AlKhalifa",
+  kicker:"Triathlon timing",
+  title:"Race Results",
+  sub:"Final times for every finisher, ranked overall and within each sex and age group.",
+  raceLbl:"Race", sexLbl:"Sex", agLbl:"Age group", findLbl:"Find a name", findPh:"Type a name",
+  all:"All", m:"Male", f:"Female", allAges:"All ages",
+  mShort:"M", fShort:"F",
+  cols:{pos:"Pos", who:"Name", cat:"Category", swim:"Swim", t1:"T1", bike:"Bike", t2:"T2", run:"Run", total:"Total"},
+  caption:"Finishers ordered by total time",
+  rOverall:"Overall", rSex:{M:"Male", F:"Female"}, rAg:"Age group",
+  status:{pending:"Results pending", provisional:"Provisional", final:"Final"},
+  out:{DNF:"Did not finish", DNS:"Did not start", DQ:"Disqualified"},
+  count:function(a, b){ return "Showing " + a + " of " + b + " finishers"; },
+  updated:function(d){ return "Last updated " + d; },
+  none:"No finishers are listed in this category yet.",
+  noName:"No finisher in this selection matches that name.",
+  pendH:"Results will be posted here after the race",
+  pendP:function(d){ return "The race takes place on " + d + ". Once finishers send in their files, this page will list everyone together with swim, bike, run and transition times, and you will be able to see your position overall and in your own category."; },
+  howH:"How to appear in the results",
+  h1:"Record the whole race on your watch in triathlon or multisport mode, so that the swim, the bike, the run and both transitions are saved as one activity.",
+  h2:"After the race, export the activity as a FIT file and email it to <a href='mailto:races@saqeralkhalifa.com'>races@saqeralkhalifa.com</a>.",
+  h3:"Write your full name, your sex and your age on race day in the email, because the file does not carry them.",
+  n1:"Only the times are published on this page, and the heart rate, cadence and power data in your file are never shown.",
+  n2:"If your watch saved the swim, the bike and the run as three separate activities, attach all three files to one email.",
+  mH:"How the times are measured",
+  mP:"Each time comes from the finisher's own watch file, which means the total runs from the moment the watch was started to the moment it was stopped. Positions are ordered by total time, and finishers with the same total share a position.",
+  foot:"Race Results · Dr. Saqer AlKhalifa · <a href='https://saqeralkhalifa.com/'>saqeralkhalifa.com</a> · <a href='https://saqeralkhalifa.com/privacy/'>Privacy</a>"
+},
+ar:{
+  doc:"نتائج السباق، توقيت الترايثلون من د. صقر آل خليفة",
+  kicker:"توقيت الترايثلون",
+  title:"نتائج السباق",
+  sub:"الأزمنة النهائية لكل من أنهى السباق، مرتبة في الترتيب العام وضمن كل فئة من فئات الجنس والعمر.",
+  raceLbl:"السباق", sexLbl:"الجنس", agLbl:"الفئة العمرية", findLbl:"ابحث عن اسم", findPh:"اكتب الاسم",
+  all:"الكل", m:"ذكور", f:"إناث", allAges:"كل الأعمار",
+  mShort:"ذكور", fShort:"إناث",
+  cols:{pos:"المركز", who:"الاسم", cat:"الفئة", swim:"السباحة", t1:"انتقال ١", bike:"الدراجة", t2:"انتقال ٢", run:"الجري", total:"الإجمالي"},
+  caption:"المتسابقون مرتبون بحسب الزمن الإجمالي",
+  rOverall:"العام", rSex:{M:"الذكور", F:"الإناث"}, rAg:"الفئة العمرية",
+  status:{pending:"بانتظار النتائج", provisional:"نتائج أولية", final:"نتائج نهائية"},
+  out:{DNF:"لم يكمل السباق", DNS:"لم يبدأ السباق", DQ:"مستبعد"},
+  count:function(a, b){ return "عرض " + a + " من " + b + " ممن أنهوا السباق"; },
+  updated:function(d){ return "آخر تحديث " + d; },
+  none:"لا يوجد متسابقون مسجلون في هذه الفئة حتى الآن.",
+  noName:"لا يوجد في هذا الاختيار متسابق يطابق هذا الاسم.",
+  pendH:"ستنشر النتائج هنا بعد السباق",
+  pendP:function(d){ return "يقام السباق يوم " + d + ". وبعد أن يرسل المتسابقون ملفاتهم ستعرض هذه الصفحة الجميع معا بأزمنة السباحة والدراجة والجري والانتقالين، وسيتمكن كل متسابق من معرفة مركزه في الترتيب العام وفي فئته."; },
+  howH:"كيف يظهر اسمك في النتائج",
+  h1:"سجل السباق كاملا على ساعتك بوضع الترايثلون أو الرياضات المتعددة، حتى تحفظ السباحة والدراجة والجري والانتقالان في نشاط واحد.",
+  h2:"بعد السباق صدر النشاط بصيغة FIT وأرسله بالبريد الإلكتروني إلى <a href='mailto:races@saqeralkhalifa.com'>races@saqeralkhalifa.com</a>.",
+  h3:"اكتب في الرسالة اسمك الكامل وجنسك وعمرك يوم السباق، لأن الملف لا يحتوي على هذه البيانات.",
+  n1:"لا ينشر في هذه الصفحة سوى الأزمنة، أما بيانات نبض القلب ومعدل الدوران والقدرة الموجودة في ملفك فلا تعرض أبدا.",
+  n2:"إذا حفظت ساعتك السباحة والدراجة والجري في ثلاثة أنشطة منفصلة فأرفق الملفات الثلاثة في رسالة واحدة.",
+  mH:"كيف تحتسب الأزمنة",
+  mP:"كل زمن مأخوذ من ملف ساعة المتسابق نفسه، أي أن الزمن الإجمالي يبدأ من لحظة تشغيل الساعة وينتهي عند إيقافها. ترتب المراكز بحسب الزمن الإجمالي، ويتقاسم المتسابقون المتساوون في الزمن المركز نفسه.",
+  foot:"نتائج السباق · د. صقر آل خليفة · <a href='https://saqeralkhalifa.com/arabic/'>saqeralkhalifa.com</a> · <a href='https://saqeralkhalifa.com/privacy/'>الخصوصية</a>"
+}};
+
+function esc(s){ return String(s == null ? "" : s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+function num(s){
+  s = String(s);
+  if(LANG !== "ar") return s;
+  return s.replace(/[0-9]/g, function(d){ return "٠١٢٣٤٥٦٧٨٩".charAt(+d); });
+}
+function pick(v){ return (v && typeof v === "object") ? (v[LANG] || v.en || v.ar || "") : (v || ""); }
+
+/* a time is seconds, or "h:mm:ss", or "mm:ss" */
+function toSec(v){
+  if(v == null || v === "") return null;
+  if(typeof v === "number") return isFinite(v) ? Math.round(v) : null;
+  var p = String(v).trim().split(":").map(Number);
+  if(p.some(isNaN)) return null;
+  var s = 0; for(var i = 0; i < p.length; i++) s = s * 60 + p[i];
+  return Math.round(s);
+}
+function clock(sec){
+  if(sec == null) return "";
+  var h = Math.floor(sec / 3600), m = Math.floor((sec % 3600) / 60), s = sec % 60;
+  var mm = (m < 10 ? "0" : "") + m, ss = (s < 10 ? "0" : "") + s;
+  return num(h > 0 ? h + ":" + mm + ":" + ss : mm + ":" + ss);
+}
+function groupOf(age){
+  age = Number(age);
+  if(!isFinite(age)) return null;
+  for(var i = 0; i < AGES.length; i++){
+    var b = AGES[i].split("-");
+    if(age >= +b[0] && age <= +b[1]) return AGES[i];
+  }
+  return null;
+}
+function sexOf(v){
+  v = String(v || "").trim().toLowerCase();
+  if(v === "m" || v === "male" || v === "ذكر") return "M";
+  if(v === "f" || v === "female" || v === "أنثى") return "F";
+  return null;
+}
+
+/* competition ranking: equal totals share a position, the next position skips */
+function rank(list, key){
+  var prev = null, pos = 0;
+  for(var i = 0; i < list.length; i++){
+    if(list[i].total !== prev){ pos = i + 1; prev = list[i].total; }
+    list[i][key] = pos;
+  }
+}
+function prepare(race){
+  var rows = (race.results || []).map(function(r){
+    var o = { name:r.name, sex:sexOf(r.sex), ag:(r.ag && AGES.indexOf(r.ag) >= 0) ? r.ag : groupOf(r.age), st:String(r.status || "FIN").toUpperCase() };
+    var sum = 0, whole = true;
+    LEGS.forEach(function(k){ o[k] = toSec(r[k]); if(o[k] == null) whole = false; else sum += o[k]; });
+    o.total = toSec(r.total);
+    if(o.total == null && whole) o.total = sum;
+    if(o.st === "FIN" && o.total == null) o.st = "DNF";
+    return o;
+  });
+  var fin = rows.filter(function(o){ return o.st === "FIN"; }).sort(function(a, b){ return a.total - b.total; });
+  var out = rows.filter(function(o){ return o.st !== "FIN"; });
+  rank(fin, "rO");
+  ["M","F"].forEach(function(s){
+    rank(fin.filter(function(o){ return o.sex === s; }), "rS");
+    AGES.forEach(function(g){ rank(fin.filter(function(o){ return o.sex === s && o.ag === g; }), "rG"); });
+  });
+  return { fin:fin, out:out };
+}
+function inSel(o){ return (SEX === "all" || o.sex === SEX) && (AG === "all" || o.ag === AG); }
+function catText(o, t){
+  var s = o.sex === "M" ? t.mShort : (o.sex === "F" ? t.fShort : "");
+  return (s + (o.ag ? " " + num(o.ag) : "")).trim();
+}
+function chip(attr, key, label, on, n){
+  return '<button type="button" class="chip" ' + attr + '="' + esc(key) + '" aria-pressed="' + (on ? "true" : "false") + '">' +
+    '<span class="l">' + esc(label) + '</span>' + (n == null ? "" : '<span class="n">' + num(n) + '</span>') + '</button>';
+}
+function tcell(k, v, t, extra){
+  return '<td class="t' + (extra || "") + '" data-l="' + esc(t.cols[k]) + '"><bdi>' + (v || "") + '</bdi></td>';
+}
+
+function render(){
+  var t = T[LANG], race = null;
+  for(var i = 0; i < RACES.length; i++) if(RACES[i].id === RACE) race = RACES[i];
+  document.title = t.doc;
+  ["kicker","title","sub"].forEach(function(k){ document.getElementById("t-" + k).textContent = t[k]; });
+  document.getElementById("l-sex").textContent = t.sexLbl;
+  document.getElementById("l-ag").textContent = t.agLbl;
+  document.getElementById("l-find").textContent = t.findLbl;
+  document.getElementById("find").setAttribute("placeholder", t.findPh);
+  document.getElementById("l-race").textContent = t.raceLbl;
+  document.getElementById("how-h").textContent = t.howH;
+  document.getElementById("h-1").textContent = t.h1;
+  document.getElementById("h-2").innerHTML = t.h2;
+  document.getElementById("h-3").textContent = t.h3;
+  document.getElementById("n-1").textContent = t.n1;
+  document.getElementById("n-2").textContent = t.n2;
+  document.getElementById("m-h").textContent = t.mH;
+  document.getElementById("m-p").textContent = t.mP;
+  document.getElementById("t-foot").innerHTML = t.foot;
+  var sn = document.querySelectorAll(".step b");
+  for(var s = 0; s < sn.length; s++) sn[s].textContent = num(s + 1);
+
+  var raceBox = document.getElementById("g-race");
+  raceBox.hidden = RACES.length < 2;
+  document.getElementById("racechips").innerHTML = RACES.map(function(r){ return chip("data-race", r.id, pick(r.name), r.id === RACE); }).join("");
+
+  var data = race ? prepare(race) : { fin:[], out:[] };
+  var st = race ? (race.status || (data.fin.length ? "provisional" : "pending")) : "pending";
+  document.getElementById("r-name").textContent = race ? pick(race.name) : "";
+  document.getElementById("r-date").textContent = race ? pick(race.date) : "";
+  var tag = document.getElementById("r-status");
+  tag.className = "tag " + st; tag.textContent = t.status[st] || "";
+
+  function n(sex, ag){ return data.fin.filter(function(o){ return (sex === "all" || o.sex === sex) && (ag === "all" || o.ag === ag); }).length; }
+  var have = data.fin.length > 0;
+  document.getElementById("sexchips").innerHTML =
+    chip("data-sex", "all", t.all, SEX === "all", have ? n("all", AG) : null) +
+    chip("data-sex", "M", t.m, SEX === "M", have ? n("M", AG) : null) +
+    chip("data-sex", "F", t.f, SEX === "F", have ? n("F", AG) : null);
+  document.getElementById("agchips").innerHTML =
+    chip("data-ag", "all", t.allAges, AG === "all", have ? n(SEX, "all") : null) +
+    AGES.map(function(g){ return chip("data-ag", g, num(g), AG === g, have ? n(SEX, g) : null); }).join("");
+
+  var sel = data.fin.filter(inSel);
+  rank(sel, "rSel");
+  var q = FIND.trim().toLowerCase();
+  function hit(o){ return !q || String(pick(o.name)).toLowerCase().indexOf(q) >= 0; }
+  var shown = sel.filter(hit);
+  var outs = data.out.filter(inSel).filter(hit);
+
+  var pend = document.getElementById("pending"), led = document.getElementById("ledger"),
+      empty = document.getElementById("empty"), count = document.getElementById("count");
+  if(!have){
+    pend.hidden = false; led.hidden = true; empty.hidden = true; count.hidden = true;
+    document.getElementById("p-h").textContent = t.pendH;
+    document.getElementById("p-p").textContent = t.pendP(race ? pick(race.date) : "");
+    return;
+  }
+  pend.hidden = true; count.hidden = false;
+  var upd = race && race.updated ? " · " + t.updated(pick(race.updated)) : "";
+  count.textContent = t.count(num(shown.length), num(data.fin.length)) + upd;
+  if(!shown.length && !outs.length){
+    led.hidden = true; empty.hidden = false; empty.textContent = sel.length ? t.noName : t.none;
+    return;
+  }
+  empty.hidden = true; led.hidden = false;
+  var c = t.cols;
+  var head = '<caption class="vh">' + esc(t.caption) + '</caption><thead><tr>' +
+    '<th scope="col">' + c.pos + '</th><th scope="col">' + c.who + '</th><th scope="col">' + c.cat + '</th>' +
+    LEGS.map(function(k){ return '<th scope="col" class="t">' + c[k] + '</th>'; }).join("") +
+    '<th scope="col" class="t">' + c.total + '</th></tr></thead>';
+  var body = shown.map(function(o){
+    var r = [t.rOverall + " " + num(o.rO)];
+    if(o.sex) r.push(t.rSex[o.sex] + " " + num(o.rS));
+    if(o.sex && o.ag) r.push(t.rAg + " " + num(o.rG));
+    return '<tr' + (o.rSel <= 3 ? ' class="podium"' : '') + '>' +
+      '<td class="pos">' + num(o.rSel) + '</td>' +
+      '<td class="who"><b>' + esc(pick(o.name)) + '</b><span class="ranks">' + r.join(" · ") + '</span></td>' +
+      '<td class="cat">' + esc(catText(o, t)) + '</td>' +
+      LEGS.map(function(k){ return tcell(k, clock(o[k]), t); }).join("") +
+      tcell("total", clock(o.total), t, " total") + '</tr>';
+  }).join("") + outs.map(function(o){
+    return '<tr class="out"><td class="pos"></td>' +
+      '<td class="who"><b>' + esc(pick(o.name)) + '</b><span class="ranks">' + esc(t.out[o.st] || o.st) + '</span></td>' +
+      '<td class="cat">' + esc(catText(o, t)) + '</td>' +
+      LEGS.map(function(k){ return tcell(k, clock(o[k]), t); }).join("") +
+      tcell("total", "", t, " total") + '</tr>';
+  }).join("");
+  document.getElementById("rtable").innerHTML = head + '<tbody>' + body + '</tbody>';
+}
+
+/* the address bar carries the selection, so a copied link opens on the same category */
+function saveUrl(){
+  try{
+    var u = new URL(location.href), p = u.searchParams;
+    if(SEX === "all") p.delete("sex"); else p.set("sex", SEX.toLowerCase());
+    if(AG === "all") p.delete("ag"); else p.set("ag", AG);
+    if(RACES.length > 1 && RACE) p.set("race", RACE); else p.delete("race");
+    history.replaceState(null, "", u.pathname + (p.toString() ? "?" + p.toString() : "") + u.hash);
+  }catch(e){}
+}
+function gc(path, title){
+  if(window.goatcounter && window.goatcounter.count){
+    try{ window.goatcounter.count({path:path, title:title, event:true}); }catch(e){}
+  }
+}
+document.addEventListener("click", function(e){
+  var c = e.target.closest ? e.target.closest(".chip") : null;
+  if(!c) return;
+  if(c.hasAttribute("data-sex")){ SEX = c.getAttribute("data-sex"); gc("rc-sex-" + SEX, "Sex " + SEX); }
+  else if(c.hasAttribute("data-ag")){ AG = c.getAttribute("data-ag"); gc("rc-ag-" + AG, "Age group " + AG); }
+  else if(c.hasAttribute("data-race")){ RACE = c.getAttribute("data-race"); }
+  var keep = c.getAttribute("data-sex") != null ? '[data-sex="' + SEX + '"]' :
+             c.getAttribute("data-ag") != null ? '[data-ag="' + AG + '"]' : '[data-race="' + RACE + '"]';
+  render(); saveUrl();
+  var again = document.querySelector(".chip" + keep); if(again) again.focus();
+});
+document.getElementById("find").addEventListener("input", function(){ FIND = this.value; render(); });
+document.getElementById("langToggle").addEventListener("click", function(){
+  LANG = (LANG === "en") ? "ar" : "en";
+  document.documentElement.lang = LANG;
+  document.documentElement.dir = (LANG === "ar") ? "rtl" : "ltr";
+  render();
+});
+
+try{
+  var q0 = new URLSearchParams(location.search);
+  var s0 = (q0.get("sex") || "").toUpperCase(); if(s0 === "M" || s0 === "F") SEX = s0;
+  var a0 = q0.get("ag"); if(a0 && AGES.indexOf(a0) >= 0) AG = a0;
+  var r0 = q0.get("race"); if(r0 && RACES.some(function(x){ return x.id === r0; })) RACE = r0;
+}catch(e){}
+render();
+</script>
+<script>
+(function(){
+  var b = document.getElementById("langToggle");
+  if(!b) return;
+  if(mcInitLang() === "ar" && document.documentElement.lang !== "ar") b.click();
+  document.addEventListener("click", function(e){
+    if(e.target && e.target.id === "langToggle"){
+      setTimeout(function(){ mcSaveLang(document.documentElement.lang === "ar" ? "ar" : "en"); }, 0);
+    }
+  }, true);
+})();
+</script>
+<script>
+/* MCXL: cross-property links carry the current language, because localStorage does not cross origins. */
+(function(){
+  var HOSTS = ["gigs.saqeralkhalifa.com","internships.saqeralkhalifa.com","saqeralkhalifa.github.io","races.saqeralkhalifa.com"];
+  function cur(){ return document.documentElement.lang === "ar" ? "ar" : "en"; }
+  function fix(a){
+    try{
+      var u = new URL(a.getAttribute("href"), location.href);
+      if(u.host === location.host || HOSTS.indexOf(u.host) < 0) return;
+      u.searchParams.set("lang", cur()); a.href = u.href;
+    }catch(e){}
+  }
+  function all(){ var n = document.querySelectorAll("a[href]"); for(var i=0;i<n.length;i++) fix(n[i]); }
+  try{ new MutationObserver(all).observe(document.documentElement,{attributes:true,attributeFilter:["lang"]}); }catch(e){}
+  document.addEventListener("click", function(e){ var a = e.target && e.target.closest && e.target.closest("a[href]"); if(a) fix(a); }, true);
+  window.addEventListener("load", all); all();
+})();
+</script>
+</body>
+</html>
