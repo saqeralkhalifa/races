@@ -1,6 +1,7 @@
 /* Race results data. One entry per race, newest last.
    status: "pending" before the race, "provisional" while files are still arriving, "final" once closed.
    Each result carries a name, sex (M or F), age on race day, and times as h:mm:ss or mm:ss.
+   A finisher who sent no watch file is entered with name, sex, age if given, total, and source: "reported".
    Only times belong here. Heart rate, cadence and power are never written to this file. */
 window.RACES = [
   {
