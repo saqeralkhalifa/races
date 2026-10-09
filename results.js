@@ -534,7 +534,8 @@ window.RACES = [
         },
         "sex": "M",
         "total": "1:17:50",
-        "source": "reported"
+        "source": "reported",
+        "age": 40
       },
       {
         "name": {
@@ -548,6 +549,15 @@ window.RACES = [
         "t2": "1:25",
         "run": "34:23",
         "total": "1:48:38",
+        "source": "screenshot"
+      },
+      {
+        "name": {
+          "en": "Maha Albayat",
+          "ar": "مها البيات"
+        },
+        "sex": "F",
+        "total": "1:38:07",
         "source": "screenshot"
       }
     ]
