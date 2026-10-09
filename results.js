@@ -394,7 +394,8 @@ window.RACES = [
         "t2": "4:30",
         "run": "32:57",
         "total": "1:54:33",
-        "source": "screenshot"
+        "source": "screenshot",
+        "age": 37
       },
       {
         "name": {
@@ -465,7 +466,12 @@ window.RACES = [
         },
         "sex": "M",
         "total": "1:37:39",
-        "source": "screenshot"
+        "source": "screenshot",
+        "swim": "17:43",
+        "t1": "4:29",
+        "bike": "41:36",
+        "t2": "2:32",
+        "run": "31:19"
       },
       {
         "name": {
