@@ -535,6 +535,20 @@ window.RACES = [
         "sex": "M",
         "total": "1:17:50",
         "source": "reported"
+      },
+      {
+        "name": {
+          "en": "Mubarak Alahmed",
+          "ar": "مبارك الأحمد"
+        },
+        "sex": "M",
+        "swim": "19:40",
+        "t1": "5:58",
+        "bike": "47:12",
+        "t2": "1:25",
+        "run": "34:23",
+        "total": "1:48:38",
+        "source": "screenshot"
       }
     ]
   }
