@@ -264,6 +264,83 @@ window.RACES = [
         "run": "32:54",
         "total": "1:42:58",
         "source": "screenshot"
+      },
+      {
+        "name": {
+          "en": "Khalid AlMehaiza",
+          "ar": "خالد المهيزع"
+        },
+        "sex": "M",
+        "swim": "14:35",
+        "t1": "3:19",
+        "bike": "36:53",
+        "t2": "1:21",
+        "run": "26:49",
+        "total": "1:23:00",
+        "source": "screenshot"
+      },
+      {
+        "name": {
+          "en": "Abdulrahman Althawadi",
+          "ar": "عبدالرحمن الذوادي"
+        },
+        "sex": "M",
+        "swim": "21:00",
+        "t1": "3:32",
+        "bike": "1:00:10",
+        "t2": "1:44",
+        "run": "34:32",
+        "total": "2:00:58",
+        "source": "screenshot"
+      },
+      {
+        "name": {
+          "en": "Samra Al Rashdi",
+          "ar": "سمرة الراشدي"
+        },
+        "sex": "F",
+        "swim": "21:31",
+        "t1": "0:39",
+        "bike": "45:34",
+        "t2": "1:41",
+        "run": "28:16",
+        "total": "1:37:40",
+        "source": "screenshot"
+      },
+      {
+        "name": {
+          "en": "Xylph Bryan Heruela",
+          "ar": "زيلف براين هيرويلا"
+        },
+        "sex": "M",
+        "swim": "18:00",
+        "t1": "2:49",
+        "bike": "38:20",
+        "t2": "1:03",
+        "run": "27:03",
+        "total": "1:27:14",
+        "source": "screenshot"
+      },
+      {
+        "name": {
+          "en": "Rashid Fikri",
+          "ar": "راشد فكري"
+        },
+        "sex": "M",
+        "age": 45,
+        "status": "DNF",
+        "source": "screenshot"
+      },
+      {
+        "name": {
+          "en": "Naser Mohamed Althawadi",
+          "ar": "ناصر محمد الذوادي"
+        },
+        "sex": "M",
+        "swim": "15:53",
+        "bike": "48:06",
+        "run": "27:08",
+        "source": "screenshot"
       }
     ]
   }
