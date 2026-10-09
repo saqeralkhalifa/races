@@ -487,7 +487,8 @@ window.RACES = [
         "bike": "44:53",
         "t2": "3:35",
         "run": "34:47",
-        "source": "reported"
+        "source": "reported",
+        "ag": "50-54"
       },
       {
         "name": {
@@ -516,6 +517,15 @@ window.RACES = [
         "run": 1634.144,
         "total": 5047.127,
         "source": "fit"
+      },
+      {
+        "name": {
+          "en": "Bradley Cox",
+          "ar": "برادلي كوكس"
+        },
+        "sex": "M",
+        "total": "1:34:31",
+        "source": "screenshot"
       }
     ]
   }
