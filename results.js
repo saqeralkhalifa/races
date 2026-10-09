@@ -5,11 +5,36 @@
    Only times belong here. Heart rate, cadence and power are never written to this file. */
 window.RACES = [
   {
-    id: "race-1",
-    name: { en: "Race 1", ar: "السباق الأول" },
-    date: { en: "Friday, October 9, 2026", ar: "الجمعة ٩ أكتوبر ٢٠٢٦" },
-    status: "pending",
-    updated: null,
-    results: []
+    "id": "race-1",
+    "name": {
+      "en": "Race 1",
+      "ar": "السباق الأول"
+    },
+    "date": {
+      "en": "Friday, October 9, 2026",
+      "ar": "الجمعة ٩ أكتوبر ٢٠٢٦"
+    },
+    "status": "provisional",
+    "updated": {
+      "en": "October 9, 2026",
+      "ar": "٩ أكتوبر ٢٠٢٦"
+    },
+    "results": [
+      {
+        "name": {
+          "en": "Saqer AlKhalifa",
+          "ar": "صقر آل خليفة"
+        },
+        "sex": "M",
+        "age": 46,
+        "swim": 932.558,
+        "t1": 145.764,
+        "bike": 2384.537,
+        "t2": 51.944,
+        "run": 1770.083,
+        "total": 5284.887,
+        "source": "fit"
+      }
+    ]
   }
 ];
