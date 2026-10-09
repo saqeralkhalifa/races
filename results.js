@@ -380,6 +380,67 @@ window.RACES = [
         "bike": "1:09:10",
         "run": "41:02",
         "source": "screenshot"
+      },
+      {
+        "name": {
+          "en": "Nayef Aljawan",
+          "ar": "نايف الجوان"
+        },
+        "sex": "M",
+        "swim": "22:08",
+        "t1": "9:00",
+        "bike": "45:57",
+        "t2": "4:30",
+        "run": "32:57",
+        "total": "1:54:33",
+        "source": "screenshot"
+      },
+      {
+        "name": {
+          "en": "Ahmed Janahi",
+          "ar": "أحمد جناحي"
+        },
+        "sex": "M",
+        "swim": "19:08",
+        "t1": "3:36",
+        "bike": "48:41",
+        "t2": "3:16",
+        "run": "37:03",
+        "total": "1:51:44",
+        "source": "screenshot"
+      },
+      {
+        "name": {
+          "en": "Saleh Al Qamar",
+          "ar": "صالح القمر"
+        },
+        "sex": "M",
+        "total": "1:47:39",
+        "source": "screenshot"
+      },
+      {
+        "name": {
+          "en": "Jassim Alwardi",
+          "ar": "جاسم الوردي"
+        },
+        "sex": "M",
+        "age": 35,
+        "total": "1:28:35",
+        "source": "reported"
+      },
+      {
+        "name": {
+          "en": "Hasan Kadhem",
+          "ar": "حسن كاظم"
+        },
+        "sex": "M",
+        "swim": "18:57",
+        "t1": "4:21.8",
+        "bike": "38:55",
+        "t2": "2:01.8",
+        "run": "26:44",
+        "total": "1:31:00",
+        "source": "screenshot"
       }
     ]
   }
