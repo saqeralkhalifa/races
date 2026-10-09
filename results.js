@@ -499,6 +499,20 @@ window.RACES = [
         "run": "31:47",
         "total": "1:49:21",
         "source": "screenshot"
+      },
+      {
+        "name": {
+          "en": "Jamie Gracie",
+          "ar": "جيمي غريسي"
+        },
+        "age": 37,
+        "swim": 1037.522,
+        "t1": 202.541,
+        "bike": 2080.449,
+        "t2": 92.471,
+        "run": 1634.144,
+        "total": 5047.127,
+        "source": "fit"
       }
     ]
   }
