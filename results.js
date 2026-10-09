@@ -226,7 +226,8 @@ window.RACES = [
         "swim": "15:00",
         "bike": "36:52",
         "run": "29:02",
-        "source": "screenshot"
+        "source": "screenshot",
+        "age": 38
       },
       {
         "name": {
@@ -440,6 +441,57 @@ window.RACES = [
         "t2": "2:01.8",
         "run": "26:44",
         "total": "1:31:00",
+        "source": "screenshot"
+      },
+      {
+        "name": {
+          "en": "Christopher Thomas",
+          "ar": "كريستوفر توماس"
+        },
+        "sex": "M",
+        "age": 35,
+        "swim": "19:00",
+        "t1": "4:00",
+        "bike": "1:05:00",
+        "t2": "2:00",
+        "run": "41:00",
+        "total": "2:11:00",
+        "source": "reported"
+      },
+      {
+        "name": {
+          "en": "Ebrahim Abdulla Touq",
+          "ar": "إبراهيم عبدالله طوق"
+        },
+        "sex": "M",
+        "total": "1:37:39",
+        "source": "screenshot"
+      },
+      {
+        "name": {
+          "en": "Ali Asad",
+          "ar": "علي أسد"
+        },
+        "sex": "M",
+        "swim": "19:46",
+        "t1": "2:45",
+        "bike": "44:53",
+        "t2": "3:35",
+        "run": "34:47",
+        "source": "reported"
+      },
+      {
+        "name": {
+          "en": "Abdulrahman Adwan",
+          "ar": "عبدالرحمن عدوان"
+        },
+        "sex": "M",
+        "swim": "21:26",
+        "t1": "7:38",
+        "bike": "45:11",
+        "t2": "3:19",
+        "run": "31:47",
+        "total": "1:49:21",
         "source": "screenshot"
       }
     ]
