@@ -526,6 +526,15 @@ window.RACES = [
         "sex": "M",
         "total": "1:34:31",
         "source": "screenshot"
+      },
+      {
+        "name": {
+          "en": "Abdulla Salmeen",
+          "ar": "عبدالله سالمين"
+        },
+        "sex": "M",
+        "total": "1:17:50",
+        "source": "reported"
       }
     ]
   }
