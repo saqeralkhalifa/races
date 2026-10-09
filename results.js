@@ -226,8 +226,9 @@ window.RACES = [
         "swim": "15:00",
         "bike": "36:52",
         "run": "29:02",
-        "source": "screenshot",
-        "age": 38
+        "source": "estimate",
+        "age": 38,
+        "total": "1:26:32"
       },
       {
         "name": {
@@ -342,7 +343,8 @@ window.RACES = [
         "swim": "15:53",
         "bike": "48:06",
         "run": "27:08",
-        "source": "screenshot"
+        "source": "estimate",
+        "total": "1:36:45"
       },
       {
         "name": {
@@ -380,7 +382,8 @@ window.RACES = [
         "swim": "18:56",
         "bike": "1:09:10",
         "run": "41:02",
-        "source": "screenshot"
+        "source": "estimate",
+        "total": "2:14:46"
       },
       {
         "name": {
