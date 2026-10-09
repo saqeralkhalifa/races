@@ -236,7 +236,8 @@ window.RACES = [
         "swim": "18:29",
         "bike": "48:20",
         "run": "25:11",
-        "source": "screenshot"
+        "source": "reported",
+        "total": "1:31:59"
       },
       {
         "name": {
