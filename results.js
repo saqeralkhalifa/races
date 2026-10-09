@@ -131,7 +131,8 @@ window.RACES = [
         "t2": 110.8,
         "run": 1453,
         "total": "1:25:45",
-        "source": "screenshot"
+        "source": "screenshot",
+        "age": 23
       },
       {
         "name": {
@@ -340,6 +341,44 @@ window.RACES = [
         "swim": "15:53",
         "bike": "48:06",
         "run": "27:08",
+        "source": "screenshot"
+      },
+      {
+        "name": {
+          "en": "Gareth Richards",
+          "ar": "غاريث ريتشاردز"
+        },
+        "sex": "M",
+        "age": 47,
+        "swim": "14:35",
+        "bike": "35:34",
+        "run": "23:33",
+        "total": "1:17:00",
+        "source": "reported"
+      },
+      {
+        "name": {
+          "en": "Abdulla Fahad Almahroos",
+          "ar": "عبدالله فهد المحروس"
+        },
+        "sex": "M",
+        "age": 37,
+        "swim": "18:20",
+        "t1": "3:38",
+        "bike": "38:18",
+        "t2": "2:17",
+        "run": "41:01",
+        "source": "screenshot"
+      },
+      {
+        "name": {
+          "en": "Faisal Al-Eisa",
+          "ar": "فيصل العيسى"
+        },
+        "sex": "M",
+        "swim": "18:56",
+        "bike": "1:09:10",
+        "run": "41:02",
         "source": "screenshot"
       }
     ]
