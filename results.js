@@ -250,6 +250,20 @@ window.RACES = [
         "run": "39:03",
         "total": "1:34:52",
         "source": "team"
+      },
+      {
+        "name": {
+          "en": "Samer Mahmandar",
+          "ar": "سامر محمندار"
+        },
+        "sex": "M",
+        "swim": "17:08",
+        "t1": "5:50",
+        "bike": "45:04",
+        "t2": "2:02",
+        "run": "32:54",
+        "total": "1:42:58",
+        "source": "screenshot"
       }
     ]
   }
