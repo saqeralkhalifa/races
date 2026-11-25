@@ -23,7 +23,7 @@ window.RACES = [
       {
         "name": {
           "en": "Saqer AlKhalifa",
-          "ar": "صقر آل خليفة"
+          "ar": "صقر بن سلمان آل خليفة"
         },
         "sex": "M",
         "age": 46,
